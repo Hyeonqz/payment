@@ -1,0 +1,31 @@
+server:
+  port: 9000
+
+spring:
+  rabbitmq: # connectionFactor 관리
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin12!@
+
+  jpa:
+    show-sql: true
+    properties:
+      format_sql: true
+      dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: validate
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/prepayment?userSSL=false&useUnicode=true&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1234
+
+token:
+  secret:
+    key: SpringBootJWTHelperTokenSecretKeyValue123!@# # 다시 설정하기
+  access-token:
+    plus-hour: 6
+  refresh-token:
+    plus-hour: 12
